@@ -5,7 +5,7 @@ import { Button } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { useState } from "react";
 
-const HomeProductSection = ({ section, data }) => {
+const HomeProductSection = ({ section, data, flag }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const slidePrev = () => setActiveIndex(activeIndex - 1);
@@ -29,7 +29,7 @@ const HomeProductSection = ({ section, data }) => {
   const items = data?.slice(0, 10).map((item) => (
     <div className="">
       {" "}
-      <HomeProductCard product={item} />
+      <HomeProductCard product={item} section={flag} />
     </div>
   ));
 
